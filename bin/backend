@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+// 初始化环境变量
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+const http = require('http');
+const app = require('../apps/backend');
+const { hostname, port } = require('../apps/backend/config');
+
+const server = http.createServer(app.callback());
+
+// 绑定端口
+server.listen(parseInt(port, 10), hostname);
+
+// 错误事件处理
+server.on('error', (err) => {
+  if (err.syscall !== 'listen') {
+    throw err;
+  }
+
+  // 插件错误类型提示
+  switch (err.code) {
+    case 'EACCES':
+      console.error(`端口 ${port} 需要 root 权限`);
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(`端口 ${port} 已被使用`);
+      process.exit(1);
+      break;
+    default:
+      throw err;
+  }
+});
+
+// 监听事件处理
+server.on('listening', () => {
+  console.log(`Listening on http://localhost:${port}`);
+});

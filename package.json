@@ -1,0 +1,39 @@
+{
+  "name": "koa-advanced-boilerplate",
+  "version": "1.0.0",
+  "description": "Koa 2 Advanced Project Template",
+  "main": "bin/init",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/52cik/koa-advanced-boilerplate.git"
+  },
+  "keywords": [
+    "koa2",
+    "boilerplate",
+    "Project Template"
+  ],
+  "author": "楼教主 <fe.52cik@gmail.com> (http://www.52cik.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/52cik/koa-advanced-boilerplate/issues"
+  },
+  "homepage": "https://github.com/52cik/koa-advanced-boilerplate#readme",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-ejs": "^4.1.0",
+    "koa-logger": "^3.1.0",
+    "koa-onerror": "^4.0.0",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
+    "mongoose": "^4.13.7"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
